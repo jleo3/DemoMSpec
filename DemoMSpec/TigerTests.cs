@@ -1,4 +1,5 @@
-﻿using Machine.Specifications;
+﻿using Machine.Fakes;
+using Machine.Specifications;
 
 #region ResharperDisable
 
@@ -10,30 +11,37 @@
 namespace DemoMSpec
 {
 
-    class TigerSpec
+    class TigerSpec : WithFakes
     {
         protected static Tiger Tiger;
-        protected static Finger Finger;
+        protected static IPoker IPoker;
 
-        Establish context = () => Tiger = new Tiger();
+        Establish context = () =>
+            {
+                IPoker = An<IPoker>();
+                Tiger = new Tiger();
+            };
     }
 
     [Subject(typeof (Tiger), "Poking the tiger")]
     class when_poking_the_tiger_with_your_finger : TigerSpec
     {
-        Establish context = () => Finger = new Finger();
+        Establish context = () => IPoker.WhenToldTo(x => x.IsAnnoying()).Return(true);
 
-        It will_annoy_him = () => Tiger.Poke(Finger).ShouldEqual("Growl");
+        It will_annoy_him = () => Tiger.Poke(IPoker).ShouldEqual("Growl");
     }
 
     class when_poking_the_tiger_with_a_stick : TigerSpec
     {
-        protected static Stick Stick;
+        Establish context = () => IPoker.WhenToldTo(x => x.IsInstigating()).Return(true);
 
-        Establish context = () =>
-            {
-                Stick = new Stick();
-            };
-        private It will_make_him_attack = () => Tiger.Poke(Stick).ShouldEqual("Swipe with Claw");
+        It will_make_him_swipe = () => Tiger.Poke(IPoker).ShouldEqual("Swipe with Claw");
+    }
+
+    class when_poking_the_tiger_with_a_stake : TigerSpec
+    {
+        Establish context = () => IPoker.WhenToldTo(x => x.IsDangerous()).Return(true);
+
+        It will_make_him_attack = () => Tiger.Poke(IPoker).ShouldEqual("Maul");
     }
 }

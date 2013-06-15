@@ -15,6 +15,10 @@ namespace DemoMSpec
         {
             if (poker.IsAnnoying())
                 return "Growl";
+            if (poker.IsInstigating())
+                return "Swipe with Claw";
+            if (poker.IsDangerous())
+                return "Maul";
             return "Purrrr";
         }
     }

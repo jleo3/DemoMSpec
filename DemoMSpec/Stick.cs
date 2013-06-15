@@ -11,5 +11,10 @@
         {
             return true;
         }
+
+        public bool IsDangerous()
+        {
+            return false;
+        }
     }
 }

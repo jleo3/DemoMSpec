@@ -1,10 +1,10 @@
 ﻿namespace DemoMSpec
 {
-    public class Finger : IPoker
+    class Stake : IPoker
     {
         public bool IsAnnoying()
         {
-            return true;
+            return false;
         }
 
         public bool IsInstigating()
@@ -14,7 +14,7 @@
 
         public bool IsDangerous()
         {
-            return false;
+            return true;
         }
     }
 }

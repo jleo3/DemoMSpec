@@ -4,5 +4,6 @@
     {
         bool IsAnnoying();
         bool IsInstigating();
+        bool IsDangerous();
     }
 }

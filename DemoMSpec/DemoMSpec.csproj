@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="IPoker.cs" />
     <Compile Include="Finger.cs" />
+    <Compile Include="Stake.cs" />
     <Compile Include="Stick.cs" />
     <Compile Include="Tiger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
