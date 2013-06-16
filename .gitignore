@@ -1,0 +1,5 @@
+DemoMSpec.ncrunch*
+*.v11.suo
+DemoMSpec/bin
+DemoMSpec/obj
+DemoMSpec/*.ncrunch
