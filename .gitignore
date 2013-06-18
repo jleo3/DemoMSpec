@@ -3,3 +3,4 @@ DemoMSpec.ncrunch*
 DemoMSpec/bin
 DemoMSpec/obj
 DemoMSpec/*.ncrunch
+_NCrunch_*
