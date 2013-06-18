@@ -18,7 +18,7 @@ namespace DemoMSpec
         Establish context = () => Tiger = new Tiger();
     }
 
-    [Subject(typeof (Tiger), "Poking the tiger")]
+    [Subject(typeof (Tiger), "Poking the Tiger with different Pokers")]
     class when_poking_the_tiger_with_your_finger : TigerSpec
     {
         Establish context = () => Finger = new Finger();
@@ -30,10 +30,8 @@ namespace DemoMSpec
     {
         protected static Stick Stick;
 
-        Establish context = () =>
-            {
-                Stick = new Stick();
-            };
+        Establish context = () => Stick = new Stick();
+
         private It will_make_him_attack = () => Tiger.Poke(Stick).ShouldEqual("Swipe with Claw");
     }
 }
