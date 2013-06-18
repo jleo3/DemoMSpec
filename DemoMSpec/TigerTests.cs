@@ -23,7 +23,7 @@ namespace DemoMSpec
             };
     }
 
-    [Subject(typeof (Tiger), "Poking the tiger")]
+    [Subject(typeof (Tiger), "Poking the Tiger with Different Pokers")]
     class when_poking_the_tiger_with_your_finger : TigerSpec
     {
         Establish context = () => IPoker.WhenToldTo(x => x.IsAnnoying()).Return(true);
