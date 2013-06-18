@@ -27,7 +27,7 @@ namespace DemoMSpec
         }
     }
 
-    [Subject(typeof (Tiger), "Hello World")]
+    [Subject(typeof (Tiger), "Poking the Tiger with different Pokers")]
     class when_poking_the_tiger_with_your_finger
     {
         protected static Tiger Tiger;
